@@ -1,0 +1,42 @@
+.auth-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-window {
+  width: 25%;
+  height: 60%;
+  background-color: var(--auth-window-background);
+  padding: 0px 1vw 0px 1vw;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #c34cf6, #000000, #000000, #c34cf6) 1;
+}
+
+.auth-window-auth-reg {
+  display: flex;
+  color: var(--main-text-color);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.auth-window-categories {
+  width: 30%;
+  cursor: default;
+  padding: 0px 2vw 0px 2vw;
+  position: relative; /* Важно для псевдоэлемента */
+}
+
+.active-tab::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Отступ от текста */
+  left: 10%; /* Отступ слева */
+  right: 10%; /* Отступ справа */
+  height: 2px;
+  background-color: #c34cf6;
+  transition:border-color 0.3s ease;
+}
