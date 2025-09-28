@@ -19,6 +19,28 @@ class UserService {
             throw error;
         }
     }
+
+    async EnterAccount(userData) {
+        try {
+            const response = await fetch(`${API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.ENTERACCOUNT}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(userData),
+            });
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(errorText);
+            }
+            return await response.json();
+        }
+        catch(error) {
+            console.error(error);
+            throw error;
+        }
+    }
 }
 
 export const userService = new UserService();

@@ -1,0 +1,25 @@
+.searchBlock-container {
+  width: 98%;
+  height: 100%;
+  background-color: var(--main-block-color);
+  border-radius: 25px;
+  position: relative;
+}
+
+.searchBlock-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #c34cf6, #000000, #000000, #c34cf6);
+    border-radius: 27px;
+    z-index: 1;
+    /* Маска вырезает внутреннюю часть, оставляя только границу */
+    mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    padding: 2px; /* толщина границы */
+  }

@@ -3,7 +3,8 @@ import './AuthPage.css'
 import AuthForm from './AuthForm';
 import RegisterForm from './RegisterForm';
 import { select } from 'framer-motion/client';
-export const AuthPage = () => {
+import { userService } from '../../.services/api/User';
+export const AuthPage = ({ setIsAuth }) => {
     const [selected, setSelected] = useState('auth');
 
     const ChooseAuthReg = (type) => {
@@ -26,7 +27,7 @@ export const AuthPage = () => {
                 </div>
                 <div>
                     {selected === 'auth' ? (
-                        <AuthForm/>
+                        <AuthForm setIsAuth={setIsAuth}/>
                     ) : (
                         <RegisterForm/>
                     )}

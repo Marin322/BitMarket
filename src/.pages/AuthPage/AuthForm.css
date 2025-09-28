@@ -1,3 +1,9 @@
 .auth-form-container {
     margin-top: 3vh;
 }
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 18px;
+}
