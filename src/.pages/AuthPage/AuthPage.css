@@ -14,6 +14,7 @@
   padding: 0px 1vw 0px 1vw;
   border: 2px solid;
   border-image: linear-gradient(45deg, #c34cf6, #000000, #000000, #c34cf6) 1;
+  border-radius: 25px;
 }
 
 .auth-window-auth-reg {

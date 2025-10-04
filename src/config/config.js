@@ -3,5 +3,6 @@ export const API_CONFIG = {
     ENDPOINTS: {
         CREATEUSER: '/api/user',
         ENTERACCOUNT: '/api/user/login',
+        GETALLPRODUCTS: '/api/products',
     }
 }
