@@ -1,6 +1,6 @@
 import '../../../.styles/ui/ProductCard/ProductCard.css'
 import { easeInOut, inertia, motion, spring } from "framer-motion";
-const ProductCard = ({ img, name, description, price }) => {
+const ProductCard = ({ id, img, name, description, price, onClick }) => {
 
     return (
         <motion.div
@@ -32,6 +32,13 @@ const ProductCard = ({ img, name, description, price }) => {
                     <h3>{name}</h3>
                     <span>{description}</span>
                     <span>{price} ₽</span>
+                </div>
+                <div className='add-tocart-container'>
+                    <button
+                        className='add-tocart-btn'
+                        onClick={onClick} >
+                        В корзину
+                    </button>
                 </div>
             </div>
         </motion.div>

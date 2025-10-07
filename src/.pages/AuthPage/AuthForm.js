@@ -3,6 +3,7 @@ import './AuthForm.css'
 import { useState } from "react";
 import { userService } from "../../.services/api/User";
 import RegAuthButton from "../../.components/common/RegAuthButton";
+import { jsx } from "react/jsx-runtime";
 const AuthForm = ({ setIsAuth }) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -23,6 +24,8 @@ const AuthForm = ({ setIsAuth }) => {
                 login: login,
                 password: password
             })
+            localStorage.setItem('userData', JSON.stringify(user));
+            localStorage.setItem('isAuth', 'true');
             setIsAuth(true);
         }
         catch (error) {

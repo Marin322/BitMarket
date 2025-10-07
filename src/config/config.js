@@ -4,5 +4,10 @@ export const API_CONFIG = {
         CREATEUSER: '/api/user',
         ENTERACCOUNT: '/api/user/login',
         GETALLPRODUCTS: '/api/products',
+        GETPRODUCT: '/api/products/',
+    },
+    CART: {
+        ADDTOCART: '/api/cart/add',
+        GETCARTITEMS: '/api/Cart/' // id
     }
 }

@@ -1,0 +1,32 @@
+.SideBar-element-container {
+  display: flex;
+  color: var(--main-text-color);
+  cursor: pointer;
+}
+
+.SideBar-element-text-icon {
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px 0px 10px;
+}
+
+.SideBar-element-neon {
+  transition: all 0.5s ease-in-out;
+  width: 1%;
+  background-color: rgb(230, 65, 219);
+  box-shadow: 
+      -2px 0 10px #fff,           /* ← смещение вправо */
+      -4px 0 15px rgb(249, 33, 223),
+      -10px 0 20px rgb(249, 33, 223),
+      -20px 0 30px rgb(249, 33, 223),
+      -40px 0 40px rgb(249, 33, 223),
+      -60px 0 60px rgb(249, 33, 223),
+      -100px 0 100px rgb(249, 33, 223),
+      -150px 0 150px rgb(249, 33, 223),
+      -200px 0 200px rgb(249, 33, 223);  /* ← свечение уходит вправо */
+}
+
+.SideBar-element-noneon {
+    width: 1%;
+}

@@ -4,6 +4,7 @@
     background-color: var(--secondary-background-color);
     overflow: auto;
     scrollbar-width: none;
+    position: relative;
 }
 
 .Header-container {
@@ -24,6 +25,19 @@
     position: sticky;
     top: 75px;
     z-index: 1;
+}
+
+.SideBar-container {
+    position: fixed;
+    right: 0;
+    top: 150px;
+    height: calc(100vh - 145px);
+    width: 300px;
+    z-index: 1;
+    background-color: var(--main-background-color);
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .Catalog-container {

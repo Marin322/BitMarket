@@ -1,8 +1,9 @@
-import { API_CONFIG } from "../../config/config"
-class ProductService {
-    async GetAllProducts() {
+import { API_CONFIG } from "../../config/config";
+
+class CartService {
+    async GetCartItems(id) {
         try {
-            const response = await fetch(`${API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.GETALLPRODUCTS}`, {
+            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.CART.GETCARTITEMS}${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
@@ -15,30 +16,30 @@ class ProductService {
             };
             return await response.json();
         }
-        catch (error) {
-            console.error(error);
+        catch(error) {
             throw error;
         };
     };
 
-    async GetProduct(id) {
+    async AddToCart(cartItem) {
         try {
-            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.GETPRODUCT}${id}`, {
-                method: 'GET',
+            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.CART.ADDTOCART}`, {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8',
-                    'Accept': 'application/json',
+                    'Accept': 'application/json'
                 },
+                body: JSON.stringify(cartItem)
             });
-            if (!response.ok) {
+
+            if (!response.ok)
                 throw new Error(response.status);
-            };
             return await response.json();
         }
-        catch (error) {
-            console.error(error);
-        }
+        catch(error) {
+            throw error;
+        };
     }
 }
 
-export const productService = new ProductService();
+export const cartService = new CartService();

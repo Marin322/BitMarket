@@ -1,0 +1,62 @@
+.MainPage-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-backgroun-color);
+  margin: 0px;
+  padding: 0px;
+}
+
+.MainPage-header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--secondary-background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MainPage-header span {
+  font-size: 1.8em;
+  margin-left: 10px;
+  color: var(--main-text-color);
+}
+
+.MainPage-header span1 {
+  font-size: 1em;
+  color: var(--main-text-color);
+  margin-right: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid white;
+}
+
+.MainPage-ads-container {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.MP-ads-slider-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.MP-ads-slider-element {
+  width: 95%;
+  height: 100%;
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MP-ads-slider-element button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(46, 46, 46, 0.97);
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+    background-color: rgb(62, 62, 62);
+}
