@@ -24,6 +24,28 @@ const CartPage = () => {
         }
     }
 
+    const deleteCartItem = async (productId) => {
+        try {
+            const del = await cartService.DeleteItem(productId)
+        }
+        catch (error) {
+
+        };
+    };
+
+    const updateQuantity = async (itemId, newQuantity) => {
+        try {
+            await cartService.ChangeQuantity(itemId, newQuantity);
+            if (newQuantity === 0) {
+                await deleteCartItem(itemId);
+                loadCartItems;
+            };
+        }
+        catch(error) {
+
+        };
+    };
+
     return (
         <div className='CartPage-container'>
             <div className='Header-container'>
@@ -33,7 +55,10 @@ const CartPage = () => {
             <div className='CartPage-cart-items'>
                 {products.map(product => (
                     <CartElement
-                        key={product.productId}
+                        onClick={() => deleteCartItem(product.itemId)}
+                        itemId={product.itemId}
+                        onQuantityChange={updateQuantity}
+                        key={product.itemId}
                         name={product.productName}
                         price={product.price}
                         quantity={product.quantity} />

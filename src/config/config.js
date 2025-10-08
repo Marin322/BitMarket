@@ -8,6 +8,8 @@ export const API_CONFIG = {
     },
     CART: {
         ADDTOCART: '/api/cart/add',
-        GETCARTITEMS: '/api/Cart/' // id
-    }
+        GETCARTITEMS: '/api/Cart/', // id
+        DELETEITEM: '/api/cart/items/', // id
+        CHANGEITEMQUANTITY: '/api/cart/items/count/' //id
+    },
 }

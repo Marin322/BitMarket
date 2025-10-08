@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import './CartElement.css'
 import { motion } from 'framer-motion';
-const CartElement = ({ name, price, quantity }) => {
+const CartElement = ({ name, price, quantity, onClick, itemId, onQuantityChange }) => {
+    const [count, setCount] = useState(quantity);
     const buttonVariants = {
         hover: { scale: 1.1 },
         tap: { scale: 0.9 }
@@ -9,6 +11,27 @@ const CartElement = ({ name, price, quantity }) => {
     const lineVariants = {
 
     };
+
+    const minusUnit = async () => {
+        const newCount = count - 1;
+        if (newCount > 0) {  // ← меняем >= на >
+            setCount(newCount);
+            await onQuantityChange(itemId, newCount);
+        } else if (newCount === 0) {
+            // Если стало 0, спрашиваем или сразу удаляем
+            if (window.confirm('Удалить товар из корзины?')) {
+                setCount(0);
+                await onQuantityChange(itemId, 0);
+            }
+        }
+    };
+
+    const plusUnit = async () => {
+        const newCount = count + 1;
+        setCount(newCount);
+        await onQuantityChange(itemId, newCount);
+    };
+
     return (
         <div className="CartElement-container">
             <div className='CartElement-image'>
@@ -21,13 +44,13 @@ const CartElement = ({ name, price, quantity }) => {
                 </div>
                 <div className='CartElement-quantity-container'>
                     <div className='CartElement-quantity-change'>
-                        <p><b>+</b></p>
+                        <p onClick={minusUnit}><b>-</b></p>
                     </div>
                     <div className='CartElement-quantity-background'>
-                        <p>{quantity}</p>
+                        <p>{count}</p>
                     </div>
                     <div className='CartElement-quantity-change'>
-                        <p><b>-</b></p>
+                        <p onClick={plusUnit}><b>+</b></p>
                     </div>
                 </div>
                 <div className='CartElement-price-container'>
@@ -37,6 +60,7 @@ const CartElement = ({ name, price, quantity }) => {
                 <div className='CartElement-delete-container'>
                     <div>
                         <motion.button
+                            onClick={onClick}
                             className="close-btn"
                             variants={buttonVariants}
                             whileHover="hover"

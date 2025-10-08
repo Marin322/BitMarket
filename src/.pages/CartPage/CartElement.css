@@ -8,7 +8,7 @@
 }
 
 .CartElement-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -17,9 +17,7 @@
   background: linear-gradient(45deg, #c34cf6, #000000, #000000, #c34cf6);
   border-radius: 20px; /* 20px + 2px */
   z-index: 0; /* ← чтобы граница была позади контента */
-  mask: 
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   padding: 2px;
   opacity: 1;
@@ -27,7 +25,7 @@
 }
 
 .CartElement-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -36,9 +34,7 @@
   background: linear-gradient(45deg, white, #000000, #000000, white);
   border-radius: 20px;
   z-index: 0;
-  mask: 
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   padding: 2px;
   opacity: 0;
@@ -108,8 +104,8 @@
 }
 
 .CartElement-price-info {
-    color: var(--secondary-text-color);
-    font-size: 0.9em;
+  color: var(--secondary-text-color);
+  font-size: 0.9em;
 }
 
 .CartElement-quantity-container {
@@ -122,31 +118,36 @@
 }
 
 .CartElement-quantity-container p {
-    color: var(--secondary-text-color);
-    font-size: 2em;
+  color: var(--secondary-text-color);
+  font-size: 2em;
 }
 
 .CartElement-quantity-change {
-    height: 90%;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  height: 90%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .CartElement-quantity-background {
-    height: 30px;
-    width: 60px;
-    border-radius: 10px;
-    background-color: var(--main-button-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 30px;
+  width: 60px;
+  border-radius: 10px;
+  background-color: var(--main-button-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .CartElement-quantity-background p {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .CartElement-delete-container {
@@ -164,4 +165,3 @@
   border: 4px solid var(--main-button-color);
   border-radius: 10px;
 }
-
