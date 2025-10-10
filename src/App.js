@@ -6,6 +6,7 @@ import CartPage from './.pages/CartPage/CartPage';
 import MainPage from './.pages/MainPage/MainPage';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import UserProfilePage from './.pages/UserProfilePage/UserProfilePage';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <Route path='/auth' element={!isAuth ? <AuthPage setIsAuth={setIsAuth} /> : <Navigate to="/catalog" replace />} />
           <Route path='/catalog' element={isAuth ? <CatalogPage /> : <Navigate to="/auth" replace />} />
           <Route path='/cart' element={isAuth ? <CartPage /> : <Navigate to="/auth" replace />} />
+          <Route path='/profile' element={isAuth ? <UserProfilePage /> : <Navigate to="/auth" replace />} />
         </Routes>
       </BrowserRouter>
     </div>
